@@ -1,12 +1,12 @@
 const inquirer = require('inquirer');
-const generateHTML = require('.src/generateHTML');
-const Manager = require('.lib/Manger.js');
-const Engineer = require('.lib.Engineer.js');
-const Intern = require('.lib/Intern.js');
+const generateHTML = require('/Users/nicoalcantara/challenge-10/team-profile-generator/dist/index.js');
+const Manager = require('./lib/Manger.js');
+const Engineer = require('./lib.Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 const team = [];
 
-function promptManager() {
+function PromptManager() {
     console.log('Please enter manager details:');
     inquirer
       .prompt([
@@ -39,13 +39,13 @@ function promptManager() {
           answers.officeNumber
         );
         team.push(manager);
-        promptTeamMembers();
+        PromptTeamMembers();
       });
   }
 
 function PromptTeamMembers() {
     inquirer
-    .prompt([
+    .Prompt([
         {
             type:'list',
             name:'role',
@@ -55,9 +55,9 @@ function PromptTeamMembers() {
     ])
     .then((answers) => {
         if (answers.role === 'Engineer') {
-          promptEngineer();
+          PromptEngineer();
         } else if (answers.role === 'Intern') {
-          promptIntern();
+          PromptIntern();
         } else {
           generateHTML(team);
         }
@@ -66,9 +66,9 @@ function PromptTeamMembers() {
 
 
 
-function promptEngineer() {
+function PromptEngineer() {
     inquirer
-    .prompt([
+    .Prompt([
         {
             type:'input',
             name: 'name',
@@ -98,16 +98,16 @@ function promptEngineer() {
             answers.github
         );
         team.push(engineer);
-        promptTeamMembers();
+        PromptTeamMembers();
         
     });
 }
 
 
 
-function promptIntern() {
+function PromptIntern() {
     inquirer
-    .prompt([
+    .Prompt([
         {
             type:'input',
             name: 'name',
@@ -144,4 +144,4 @@ function promptIntern() {
 
 
 
-promptManager();
+PromptManager();
