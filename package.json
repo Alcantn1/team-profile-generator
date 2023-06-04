@@ -2,10 +2,9 @@
   "name": "team-profile-generator",
   "version": "1.0.0",
   "description": "A team profile generator",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "develop": "node index.js"
+  "test": "jest"
   },
   "author": "Nico",
   "license": "MIT",

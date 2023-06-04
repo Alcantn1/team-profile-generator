@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const generateHTML = require('/Users/nicoalcantara/challenge-10/team-profile-generator/dist/index.js');
+const generateHTML = require('./index.js');
 const Manager = require('./lib/Manger.js');
 const Engineer = require('./lib.Engineer.js');
 const Intern = require('./lib/Intern.js');
